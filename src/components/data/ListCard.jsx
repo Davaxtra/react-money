@@ -38,7 +38,7 @@ const ListCard = ({ data, addData, deleteData }) => {
 
     const cleaningData = () => {
         setTitle("");
-        setValue(0);
+        setValue();
         setType(1);
     };
 
@@ -202,9 +202,10 @@ const ListCard = ({ data, addData, deleteData }) => {
                                             type='number'
                                             className='form-control'
                                             id='inputNominal'
-                                            value={value}
+                                            placeholder="Masukkan Nominal"
+                                            value={value === 0 ? '' : value}
                                             onChange={(e) =>
-                                                setValue(Number(e.target.value))
+                                                setValue(e.target.value === '' ? '' : Number(e.target.value))
                                             }
                                         />
                                     </div>
